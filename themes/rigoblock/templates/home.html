@@ -1,0 +1,106 @@
+<!-- <div class="home-search jumbotron row">
+  <form class="search-form form-inline" action="{{config.base_url}}/">
+    <div class="form-group">
+      <label class="sr-only" for="home-search">{{lang.home.searchKnowledgeBase}}</label>
+      <input type="search" class="form-control input-lg" name="search" id="home-search" size="50" placeholder="{{lang.home.searchKnowledgeBase}}">
+      <button type="submit" class="btn btn-primary btn-lg">{{lang.global.search}}</button>
+    </div>
+  </form>
+</div> -->
+
+
+<!-- Topics -->
+<section class="topics">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <header>
+          <h2><span class="icon-pages"></span>Explore Topics</h2>
+          <p>We did our best to cover all topics related to this product. Each section have number which represent
+            number of topic in each category.</p>
+        </header>
+        <div class="row">
+          {{#pages}}
+          {{#is_index}}
+          {{#files.length}}
+          <div class="col col-sm-4 col-xs-12">
+            <div class="topics-list">
+              <h2>{{lang.global.mainArticles}}</h3>
+                <ul>
+                  {{#files}}
+                  <li><a href="{{config.base_url}}/{{slug}}">{{title}}</a></li>
+                  {{/files}}
+                </ul>
+            </div>
+          </div>
+          {{/files.length}}
+          {{/is_index}}
+          {{^is_index}}
+          <div class="col col-sm-4 col-xs-12">
+            <div class="topics-list">
+              <h2>{{title}}</h2>
+              <ul>
+                {{#files}}
+                {{^is_directory}}
+                <li><a href="{{config.base_url}}/{{slug}}">{{title}}</a></li>
+                {{/is_directory}}
+                {{#is_directory}}
+                <li>{{title}}
+                  {{#files}}
+                  <ul>
+                    {{^is_directory}}
+                    <li><a href="{{config.base_url}}/{{slug}}">{{title}}</a></li>
+                    {{/is_directory}}
+                    {{#is_directory}}
+                    <li>{{title}}</li>
+                    <ul>
+                      {{#files}}
+                      <li><a href="{{config.base_url}}/{{slug}}">{{title}}</a></li>
+                      {{/files}}
+                    </ul>
+                    {{/is_directory}}
+                  </ul>
+                  {{/files}}
+                </li>
+                {{/is_directory}}
+                {{/files}}
+              </ul>
+            </div>
+          </div>
+          {{/is_index}}
+          {{/pages}}
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="sidebar">
+          <div class="widget widget-support-forum">
+            <span class="icon icon-forum"></span>
+            <h4>Looking for help? Join our Community</h4>
+            <p>Couldn’t find what your are looking for ? Why not join out community forums and let us help you.</p>
+            <a href="https://community.rigoblock.com" class="btn btn-success" target="_blank">Community Forum</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="row call-to-action">
+
+      <div class="col-lg-1">
+        <span class="icon icon-envelope"></span>
+      </div>
+      <div class="col-lg-9">
+        <h3>Contact Us</h3>
+        <p>If you have question which is beyond this knowledgebase Kindly contact us</p>
+      </div>
+      <div class="col-lg-2">
+        <a href="#" class="btn btn-success btn-action">Write to Us Now</a>
+      </div>
+
+    </div>
+  </div>
+</section>

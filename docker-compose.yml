@@ -1,0 +1,25 @@
+version: '3.2'
+
+services:
+  raneto:
+    image: appsecco/raneto
+    volumes:
+      - ./content/:/data/content/
+      - ./themes/:/opt/raneto/themes/
+      - ./config/config.default.js:/opt/raneto/example/config.default.js
+    ports:
+      - "3000"
+    expose:
+      - "3000"
+    container_name: raneto
+    labels:
+        traefik.backend: "raneto"
+        traefik.enable: "true"
+        traefik.frontend.rule: "Host:help.rigoblock.com"
+        traefik.docker.network: "traefik_web"
+        traefik.port: "3000"
+
+networks:
+  default:
+    external:
+      name: traefik_web

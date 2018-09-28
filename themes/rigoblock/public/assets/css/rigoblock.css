@@ -1,0 +1,13 @@
+.article-text {
+
+}
+
+.article-text ul{
+  padding-left: 25px;
+}
+
+.article-text li{
+  line-height: 24px;
+  color: #5e6977;
+  font-weight: 300;
+}
